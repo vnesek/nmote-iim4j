@@ -1,0 +1,15 @@
+# Additional country codes
+# defined in IPTC IIMv4 Appendix D
+
+__ XUN ___ United Nations
+__ XEU ___ European Union (formerly known as the EC and before that the EEC)
+__ XSP ___ SPace
+__ XSE ___ at SEa
+__ XIF ___ In Flight
+__ XEN ___ ENgland (where greater granularity than Great Britain is desired)
+__ XSC ___ SCotland
+__ XNI ___ Northern Ireland
+__ XWA ___ WAles.
+__ PSE ___ Palestine
+__ GZA ___ Gaza
+__ JRO ___ Jericho

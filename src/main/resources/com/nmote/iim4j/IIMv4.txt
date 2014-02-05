@@ -1,0 +1,104 @@
+# Copyrigth 2004 Nmote ltd.
+1:00:Model Version:BinaryNumber(2):mn
+1:05:Destination:String(1024):or
+1:20:File Format:BinaryNumber(2):mn
+1:22:File Format Version:BinaryNumber(2):mn
+1:30:Service Identifier:String(10):mn
+1:40:Envelope Number:Number(8):mn
+1:50:Product:String(32):or
+1:60:Envelope Priority:Number(1):on
+1:70:Date Sent:Date(yyyyMMdd):mn
+1:80:Time Sent:Date(HHmmssZ):on
+1:90:Coded Character Set:CodedCharset:on
+1:100:UNO:String(80):on
+1:120:ARM Identifier:BinaryNumber(2):on
+1:122:ARM Version:BinaryNumber(2):on
+2:00:Record Version:BinaryNumber(2):mn
+2:03:Object Type Reference Object:String(67):n
+2:04:ObjectAttribute Reference:String(68):r
+2:05:Object Name:String(64):n
+2:07:Edit Status:String(64):n
+2:08:Editorial Update:Number(2):n
+2:10:Urgency:Number(2):n
+2:12:Subject Reference:String(236):r
+2:15:Category:String(3):rd
+2:20:Supplemental Category:String(32):rd
+2:22:Fixture Identifier:String(32):n
+2:25:Keywords:String(64):r
+2:26:Content Location Code:String(3):r
+2:27:Content Location Name:String(64):r
+2:30:Release Date:Date(yyyyMMdd):n
+2:35:Release Time:Date(HHmmssZ):n
+2:37:Expiration Date:Date(yyyyMMdd):n
+2:38:Expiration Time:Date(HHmmssZ):n
+2:40:Special Instructions:String(256):n
+2:42:Action Advised:Number(2):n
+2:45:Reference Service:String(10):or
+2:47:Reference Date:Date(yyyyMMdd):or
+2:50:Reference Number:Number(8):or
+2:55:Date Created:Date(yyyyMMdd):n
+2:60:Time Created:Date(HHmmssZ):n
+2:62:Digital Creation Date:Date(yyyyMMdd):n
+2:63:Digital Creation Time:Date(HHmmssZ):n
+2:65:Originating Program:String(32):n
+2:70:Program Version:String(10):n
+2:75:Object Cycle:String(1):n
+2:80:By-line:String(32):r
+2:85:By-line Title:String(32):r
+2:90:City:String(32):n
+2:92:Sub-location:String(32):n
+2:95:Province/State:String(32):n
+2:100:Country/Primary Location Code:String(3):n
+2:101:Country/Primary Location Name:String(64):n
+2:103:Original Transmission Reference:String(32):n
+2:105:Headline:String(256):n
+2:110:Credit:String(32):n
+2:115:Source:String(32):n
+2:116:Copyright Notice:String(128):n
+2:118:Contact:String(128):r
+2:120:Caption/Abstract:String(2000):n
+2:122:Writer/Editor:String(32):r
+2:125:Rasterized Caption:Binary(7360):n
+2:130:Image Type:String(2):n
+2:131:Image Orientation:String(1):n
+2:135:Language Identifier:String(3):n
+2:150:Audio Type:String(2):n
+2:151:Audio Sampling Rate:Number(6):n
+2:152:Audio Sampling Resolution:Number(2):n
+2:153:Audio Duration:String(6):n
+2:154:Audio Outcue:String(64):n
+2:200:ObjectData Preview File Format:BinaryNumber(2):n
+2:201:ObjectData Preview File Format Version:BinaryNumber(2):n
+2:202:ObjectData Preview Data:Binary(256000):n
+3:00:Record Version:BinaryNumber(2):mn
+3:10:Picture Number:Binary(16):mn
+3:20:Pixels Per Line In Scanning Direction:BinaryNumber(2):mn
+3:30:Number of Lines:BinaryNumber(2):mn
+3:40:Pixel Size In Scanning Direction:BinaryNumber(2):mn
+3:50:Pixel Size Perpendicular To Scanning Direction:BinaryNumber(2):mn
+3:55:Supplement Type:BinaryNumber(1):n
+3:60:Colour Representation:BinaryNumber(2):mn
+3:64:Interchange Colour Space:Binary(1):n
+3:65:Colour Sequence:Binary(3):n
+3:66:ICC Input Colour Profile:Binary(524288):n
+3:70:Colour Calibration Matrix Table:Binary(524288):nd
+3:80:Lookup Table:Binary(131072):n
+3:84:Number of Index Entries:BinaryNumber(2):n
+3:85:ColourPalette:Binary(524288):n
+3:86:Number of Bits per Sample:BinaryNumber(1):n
+3:90:Sampling Structure:BinaryNumber(1):n
+3:100:Scanning Direction:BinaryNumber(1):mn
+3:102:Image Rotation:BinaryNumber(1):n
+3:110:Data Compression Method:BinaryNumber(1):n
+3:120:Quantisation Method:Binary(4):n
+3:125:End Points:Binary:mn
+3:130:Excursion Tolerance:BinaryNumber(1):n
+3:135:Bits Per Component:Binary:n
+3:140:Maximum Density Range:BinaryNumber(2):n
+3:145:Gamma Compensated Value:BinaryNumber(2):n
+7:10:Size Mode:BinaryNumber(1):mn
+7:20:Max Subfile Size:VarBinaryNumber:mn
+7:90:ObjectData Size Announced:VarBinaryNumber:n
+7:95:Maximum ObjectData Size:VarBinaryNumber:n
+8:10:Subfile:Binary:r
+9:10:Confirmed ObjectData Size:VarBinaryNumber:n
