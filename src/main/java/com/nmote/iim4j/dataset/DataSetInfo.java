@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved.
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -8,7 +8,7 @@ package com.nmote.iim4j.dataset;
 import com.nmote.iim4j.serialize.Serializer;
 
 /**
- * DataSetInfo contains meta-information about a IIM DataSet.
+ * DataSetInfo contains meta-information about an instance of IIM DataSet.
  */
 public interface DataSetInfo {
 
@@ -17,21 +17,21 @@ public interface DataSetInfo {
 	 *
 	 * @return DataSet number
 	 */
-	public int getDataSetNumber();
+	int getDataSetNumber();
 
 	/**
 	 * Returns DataSet name.
 	 *
 	 * @return DataSet name
 	 */
-	public String getName();
+	String getName();
 
 	/**
 	 * Returns true if DataSet is repeatable.
 	 *
 	 * @return true if DataSet is repeatable
 	 */
-	public boolean isRepeatable();
+	boolean isRepeatable();
 
 	/**
 	 * Returns true if DataSet is mandatory.
@@ -43,7 +43,7 @@ public interface DataSetInfo {
 	/**
 	 * Returns serializer for this dataset.
 	 *
-	 * @return
+	 * @return serializer for this dataset
 	 */
-	public Serializer getSerializer();
+	Serializer getSerializer();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -12,13 +12,10 @@ import com.nmote.iim4j.dataset.DataSetInfo;
 import com.nmote.iim4j.stream.IIMOutputStream;
 
 /**
- * IIMWriter
+ * IIMWriter is used to write records to output stream.
  */
 public class IIMWriter {
 
-	/**
-	 * 
-	 */
 	public IIMWriter(IIMOutputStream out) {
 		this.output = out;
 	}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -20,9 +20,6 @@ import java.util.regex.Pattern;
  */
 public class DefaultSubjectReferenceSystem implements SubjectReferenceSystem {
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#get(java.lang.String)
-	 */
 	public SubjectReference get(String number) {
 		SubjectReference result = references.get(number);
 		if (result == null) {
@@ -31,9 +28,6 @@ public class DefaultSubjectReferenceSystem implements SubjectReferenceSystem {
 		return result;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#getParent(com.nmote.iim4j.srs.SubjectReference)
-	 */
 	public SubjectReference getParent(SubjectReference ref) {
 		SubjectReference parent;
 		if (ref.isSubjectDetailDefined()) {
@@ -47,23 +41,14 @@ public class DefaultSubjectReferenceSystem implements SubjectReferenceSystem {
 		return parent;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#getName(com.nmote.iim4j.srs.SubjectReference)
-	 */
 	public String getName(SubjectReference ref) {
 		return names.get(ref.getNumber());
 	}
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#getDescription(com.nmote.iim4j.srs.SubjectReference)
-	 */
 	public String getDescription(SubjectReference ref) {
 		return descriptions.get(ref.getNumber());
 	}
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#getChildren(com.nmote.iim4j.srs.SubjectReference)
-	 */
 	public Collection<SubjectReference> getChildren(SubjectReference ref) {
 		String prefix;
 		String suffix;
@@ -145,9 +130,6 @@ public class DefaultSubjectReferenceSystem implements SubjectReferenceSystem {
 		}
 	}
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#getTopSubjectReferences()
-	 */
 	public Collection<SubjectReference> getTopSubjectReferences() {
 		Collection<SubjectReference> result = new ArrayList<SubjectReference>();
 		for (Iterator<SubjectReference> iter = references.values().iterator(); iter.hasNext();) {
@@ -159,9 +141,6 @@ public class DefaultSubjectReferenceSystem implements SubjectReferenceSystem {
 		return result;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.srs.SubjectReferenceSystem#getAllSubjectReferences()
-	 */
 	public Collection<SubjectReference> getAllSubjectReferences() {
 		return references.values();
 	}

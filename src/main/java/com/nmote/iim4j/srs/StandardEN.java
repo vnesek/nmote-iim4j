@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved. 
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -1466,7 +1466,7 @@ class StandardEN {
 		srs.add("15062011", "100 m backstroke", "NA");
 		srs.add("15062012", "200 m backstroke", "NA");
 		srs.add("15062013", "50 m breaststroke", "NA");
-		srs.add("15062014", "100 m breaststroke", "NA");
+		srs.add("15062015", "100 m breaststroke", "NA");
 		srs.add("15062015", "200 m breaststroke", "NA");
 		srs.add("15062016", "50 m butterfly", "NA");
 		srs.add("15062017", "100 m butterfly", "NA");

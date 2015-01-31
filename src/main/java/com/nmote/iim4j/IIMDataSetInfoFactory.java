@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -72,7 +72,13 @@ public class IIMDataSetInfoFactory extends DefaultDataSetInfoFactory {
 	}
 
 	/**
-	 * @see com.nmote.iim4j.DefaultDataSetInfoFactory#create(int, int)
+	 * Creates and caches dataset info object. Subsequent invocations will
+	 * return same instance.
+	 *
+	 * @see IIM#DS(int, int)
+	 * @param dataSet
+	 *            dataset record number
+	 * @return dataset info instace
 	 */
 	public DataSetInfo create(int dataSet) throws InvalidDataSetException {
 		DataSetInfo info = dataSets.get(createKey(dataSet));

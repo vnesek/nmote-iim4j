@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -7,12 +7,14 @@ package com.nmote.iim4j.srs;
 
 import java.io.Serializable;
 
+import com.nmote.iim4j.About;
+
 /**
  * SubjectReference
  */
 public class SubjectReference implements Serializable, Comparable<SubjectReference> {
 
-	private static final long serialVersionUID = 100L;
+	private static final long serialVersionUID = About.SERIAL_VERSION_UID;
 
 	private static String toIPTCHelper(String s) {
 		String result;
@@ -36,16 +38,10 @@ public class SubjectReference implements Serializable, Comparable<SubjectReferen
 		this.number = number;
 	}
 
-	/**
-	 * @see java.lang.Comparable#compareTo(java.lang.Object)
-	 */
 	public int compareTo(SubjectReference ref) {
 		return this.number.compareTo(ref.number);
 	}
 
-	/**
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	public boolean equals(Object obj) {
 		return obj == this
 				|| (obj instanceof SubjectReference && ((SubjectReference) obj).getNumber().equals(getNumber()));
@@ -67,9 +63,6 @@ public class SubjectReference implements Serializable, Comparable<SubjectReferen
 		return number.substring(0, 2);
 	}
 
-	/**
-	 * @see java.lang.Object#hashCode()
-	 */
 	public int hashCode() {
 		return number.hashCode();
 	}
@@ -84,9 +77,10 @@ public class SubjectReference implements Serializable, Comparable<SubjectReferen
 
 	/**
 	 * Formats an IPTC string for this reference using information obtained from
-	 * sms SUbject Reference System.
-	 * 
+	 * Subject Reference System.
+	 *
 	 * @param srs
+	 *            reference subject reference system
 	 * @return IPTC formatted reference
 	 */
 	public String toIPTC(SubjectReferenceSystem srs) {
@@ -112,9 +106,6 @@ public class SubjectReference implements Serializable, Comparable<SubjectReferen
 		return b.toString();
 	}
 
-	/**
-	 * @see java.lang.Object#toString()
-	 */
 	public String toString() {
 		return number.toString();
 	}

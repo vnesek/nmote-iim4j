@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -16,11 +16,15 @@ public class SubIIMInputStream implements IIMInputStream {
 
 	/**
 	 * Constructs a SubIIMInputStream from a given stream, offset and length.
-	 * 
+	 *
 	 * @param subStream
+	 *            underlying stream
 	 * @param offset
+	 *            byte offset
 	 * @param length
+	 *            byte length
 	 * @throws IOException
+	 *             if underlying stream can't be read
 	 */
 	public SubIIMInputStream(IIMInputStream subStream, long offset, int length) throws IOException {
 		this(subStream);
@@ -29,11 +33,13 @@ public class SubIIMInputStream implements IIMInputStream {
 
 	/**
 	 * This constructor should be used by subclasses that can't determine offset
-	 * and length. Such sbclasses should call setOffsetAndLength() from
-	 * constructuctor to finish initialization.
-	 * 
+	 * and length. Such subclasses should call setOffsetAndLength() from
+	 * constructor to finish initialization.
+	 *
 	 * @param subStream
+	 *            underlying stream
 	 * @throws IOException
+	 *             if underlying stream can't be read
 	 */
 	protected SubIIMInputStream(IIMInputStream subStream) throws IOException {
 		if (!subStream.isCached()) {
@@ -47,10 +53,13 @@ public class SubIIMInputStream implements IIMInputStream {
 	 * This should be called from a subclass constructor, if offset or length
 	 * are unknown at a time when SubIIMInputStream constructor is called. This
 	 * method shouldn't be called more than once.
-	 * 
+	 *
 	 * @param offset
+	 *            byte offset
 	 * @param length
+	 *            byte length
 	 * @throws IOException
+	 *             if underlying stream can't be read
 	 */
 	protected void setOffsetAndLength(long offset, int length) throws IOException {
 		this.offset = offset;
@@ -62,16 +71,10 @@ public class SubIIMInputStream implements IIMInputStream {
 		}
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#isCached()
-	 */
 	public boolean isCached() {
 		return true;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#seek(long)
-	 */
 	public void seek(long position) throws IOException {
 		if (position > length) {
 			throw new EOFException("seek past end of file (pos=" + position + ", length=" + length);
@@ -79,16 +82,10 @@ public class SubIIMInputStream implements IIMInputStream {
 		this.position = position;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#position()
-	 */
 	public long position() throws IOException {
 		return position;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#read()
-	 */
 	public int read() throws IOException {
 		subStream.seek(position + offset);
 		int r;
@@ -101,16 +98,10 @@ public class SubIIMInputStream implements IIMInputStream {
 		return r;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#read(byte[])
-	 */
 	public int read(byte[] buffer) throws IOException {
 		return read(buffer, 0, buffer.length);
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#read(byte[], int, int)
-	 */
 	public int read(byte[] buffer, int boffset, int blength) throws IOException {
 		subStream.seek(position + offset);
 		if (position + blength > length) {
@@ -123,9 +114,6 @@ public class SubIIMInputStream implements IIMInputStream {
 		return r;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.stream.IIMInputStream#close()
-	 */
 	public void close() throws IOException {
 		subStream.close();
 	}

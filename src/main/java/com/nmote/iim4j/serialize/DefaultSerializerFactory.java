@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -9,13 +9,10 @@ import java.lang.reflect.Constructor;
 
 /**
  * DefaultSerializerFactory is default implementation of SerializerFactory. It
- * is used by IIMDataSetInfoFactory to create Serializers.
+ * is used by IIMDataSetInfoFactory to create {@link Serializer} instances.
  */
 public class DefaultSerializerFactory implements SerializerFactory {
 
-	/**
-	 * @see com.nmote.iim4j.serialize.SerializerFactory#create(java.lang.String)
-	 */
 	public Serializer create(String spec) {
 		String type, def;
 		int lparen = spec.indexOf('(');

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -14,7 +14,7 @@ import com.nmote.iim4j.dataset.InvalidDataSetException;
 
 /**
  * IIMReaderIterator takes IIMReader and exposes it as
- * an Iterator.
+ * an Iterator over data sets.
  */
 public class IIMReaderIterator implements Iterator<DataSet> {
 
@@ -22,19 +22,13 @@ public class IIMReaderIterator implements Iterator<DataSet> {
 		this.reader = reader;
 	}
 
-	/**
-	 * @see java.util.Iterator#remove()
-	 */
 	public void remove() {
 	}
 
-	/**
-	 * @see java.util.Iterator#hasNext()
-	 */
 	public boolean hasNext() {
 		try {
 			next = reader.read();
-			return next != null; 
+			return next != null;
 		} catch (IOException e) {
 			next = null;
 			return false;
@@ -44,16 +38,13 @@ public class IIMReaderIterator implements Iterator<DataSet> {
 		}
 	}
 
-	/**
-	 * @see java.util.Iterator#next()
-	 */
 	public DataSet next() {
 		if (next == null && !hasNext()) {
 			throw new NoSuchElementException();
 		}
 		return next;
 	}
-	
+
 	private DataSet next;
 	private final IIMReader reader;
 }

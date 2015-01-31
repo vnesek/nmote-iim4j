@@ -1,38 +1,31 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
 package com.nmote.iim4j.dataset;
 
+import com.nmote.iim4j.About;
+
 /**
- * InvalidDataSetException
+ * InvalidDataSetException is thrown when attempting to instantiate dataset with
+ * invalid record numbers or some other violation.
  */
 public class InvalidDataSetException extends Exception {
 
-	private static final long serialVersionUID = 100L;
+	private static final long serialVersionUID = About.SERIAL_VERSION_UID;
 
 	public InvalidDataSetException() {
 	}
 
-	/**
-	 * @param message
-	 */
 	public InvalidDataSetException(String message) {
 		super(message);
 	}
 
-	/**
-	 * @param cause
-	 */
 	public InvalidDataSetException(Throwable cause) {
 		super(cause);
 	}
 
-	/**
-	 * @param message
-	 * @param cause
-	 */
 	public InvalidDataSetException(String message, Throwable cause) {
 		super(message, cause);
 	}

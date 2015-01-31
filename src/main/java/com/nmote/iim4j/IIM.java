@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -11,11 +11,11 @@ package com.nmote.iim4j;
 public final class IIM {
 
 	/**
-	 * Returns a dataset number for a given record and dataset
-	 * 
-	 * @param record
-	 * @param dataSet
-	 * @return dataset number
+	 * Returns a dataset number for a given record and dataset.
+	 *
+	 * @param record record number
+	 * @param dataSet data set number
+	 * @return combined dataset number as used by IIM4j
 	 */
 	public static int DS(int record, int dataSet) {
 		return (record << 8) | dataSet;

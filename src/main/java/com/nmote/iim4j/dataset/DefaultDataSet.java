@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -15,9 +15,11 @@ public class DefaultDataSet implements DataSet {
 
 	/**
 	 * Creates DataSet instance
-	 * 
+	 *
 	 * @param info
+	 *            meta data about a dataset instance
 	 * @param data
+	 *            raw binary data
 	 * @throws NullPointerException
 	 *             if info or data is null
 	 */
@@ -29,31 +31,33 @@ public class DefaultDataSet implements DataSet {
 	/**
 	 * Subclass can skip setting data in constructor as it could be lazily
 	 * initialized.
-	 * 
+	 *
 	 * @param info
+	 *            meta data about a dataset instance
 	 */
 	protected DefaultDataSet(DataSetInfo info) {
 		setInfo(info);
 	}
 
 	/**
-	 * @return
+	 * @return dataset metadata
 	 */
 	public DataSetInfo getInfo() {
 		return info;
 	}
 
 	/**
-	 * @return
+	 * @return raw binary data
 	 */
 	public byte[] getData() {
 		return data;
 	}
 
 	/**
-	 * @param bs
+	 * @param data
+	 *            binary formatted data
 	 * @throws NullPointerException
-	 *             if info is null
+	 *             if data is null
 	 */
 	public void setData(byte[] data) {
 		if (data == null) {
@@ -64,6 +68,7 @@ public class DefaultDataSet implements DataSet {
 
 	/**
 	 * @param info
+	 *            dataset metadata
 	 * @throws NullPointerException
 	 *             if info is null
 	 */
@@ -74,16 +79,10 @@ public class DefaultDataSet implements DataSet {
 		this.info = info;
 	}
 
-	/**
-	 * @see com.nmote.iim4j.dataset.DataSet#getLength()
-	 */
 	public int getLength() {
 		return data.length;
 	}
 
-	/**
-	 * @see java.lang.Object#toString()
-	 */
 	public String toString() {
 		StringBuilder b = new StringBuilder();
 		b.append("DataSet(");

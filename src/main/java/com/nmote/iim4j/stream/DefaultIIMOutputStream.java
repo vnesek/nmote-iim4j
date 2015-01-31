@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -24,35 +24,18 @@ public class DefaultIIMOutputStream implements IIMOutputStream {
 		this(new FileOutputStream(f));
 	}
 
-	/**
-	 * @throws java.io.IOException
-	 */
 	public void close() throws IOException {
 		this.out.close();
 	}
 
-	/**
-	 * @param b
-	 * @throws java.io.IOException
-	 */
 	public void write(byte[] b) throws IOException {
 		this.out.write(b);
 	}
 
-	/**
-	 * @param b
-	 * @param off
-	 * @param len
-	 * @throws java.io.IOException
-	 */
 	public void write(byte[] b, int off, int len) throws IOException {
 		this.out.write(b, off, len);
 	}
 
-	/**
-	 * @param b
-	 * @throws java.io.IOException
-	 */
 	public void write(int b) throws IOException {
 		this.out.write(b);
 	}

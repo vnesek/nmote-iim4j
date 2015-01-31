@@ -12,21 +12,15 @@ public class DefaultSerializationContext implements SerializationContext {
 	public DefaultSerializationContext() {
 		this(null);
 	}
-	
+
 	public DefaultSerializationContext(String characterSet) {
 		setCharacterSet(characterSet);
 	}
-	
-	/**
-	 * @see com.nmote.iim4j.serialize.SerializationContext#getCharacterSet()
-	 */
+
 	public String getCharacterSet() {
 		return characterSet;
 	}
-	
-	/**
-	 * @param cs
-	 */
+
 	public void setCharacterSet(String cs) {
 		if (cs != null) {
 			characterSetAssigned = true;
@@ -37,10 +31,7 @@ public class DefaultSerializationContext implements SerializationContext {
 		}
 	}
 
-	
-	/**
-	 * @return Returns the characterSetAssigned.
-	 */
+
 	public boolean isCharacterSetAssigned() {
 		return this.characterSetAssigned;
 	}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -32,9 +32,6 @@ public class DateSerializer implements Serializer {
 		}
 	}
 
-	/**
-	 * @see java.lang.Object#toString()
-	 */
 	public String toString() {
 		return format;
 	}
