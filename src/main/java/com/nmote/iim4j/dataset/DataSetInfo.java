@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2014. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -14,35 +14,35 @@ public interface DataSetInfo {
 
 	/**
 	 * Returns DataSet number.
-	 * 
+	 *
 	 * @return DataSet number
 	 */
 	public int getDataSetNumber();
 
 	/**
 	 * Returns DataSet name.
-	 * 
+	 *
 	 * @return DataSet name
 	 */
 	public String getName();
 
 	/**
 	 * Returns true if DataSet is repeatable.
-	 * 
+	 *
 	 * @return true if DataSet is repeatable
 	 */
 	public boolean isRepeatable();
 
 	/**
 	 * Returns true if DataSet is mandatory.
-	 * 
+	 *
 	 * @return true if DataSet is repeatable
 	 */
 	// public boolean isMandatory();
 
 	/**
-	 * Returs serializer for this dataset.
-	 * 
+	 * Returns serializer for this dataset.
+	 *
 	 * @return
 	 */
 	public Serializer getSerializer();
