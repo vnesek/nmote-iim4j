@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved. 
+ * Copyright (c) Nmote Ltd. 2004-2015. All rights reserved.
  * See LICENSE doc in a root of project folder for additional information.
  */
 
@@ -44,7 +44,8 @@ public class JPEGIIMInputStream extends SubIIMInputStream {
 
 			if (segmentMarker == JPEGUtil.APPD) {
 				if (input.isCached()) {
-					findStartTag(input);
+					// Substract skipped 8BIM headers from segment size
+					segmentSize -= findStartTag(input);
 				}
 				setOffsetAndLength(input.position(), segmentSize);
 				break;
@@ -55,7 +56,8 @@ public class JPEGIIMInputStream extends SubIIMInputStream {
 		}
 	}
 
-	private static void findStartTag(IIMInputStream input) throws IOException {
+	private static int findStartTag(IIMInputStream input) throws IOException {
+		long start = input.position();
 		int tag = input.read();
 		while (tag != 28) {
 			if (tag == -1) {
@@ -64,9 +66,9 @@ public class JPEGIIMInputStream extends SubIIMInputStream {
 			}
 			tag = input.read();
 		}
-
 		long pos = input.position() - 1;
 		input.seek(pos);
+		return (int) (pos - start);
 	}
 
 }

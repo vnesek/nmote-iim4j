@@ -86,6 +86,10 @@ public class SubIIMInputStream implements IIMInputStream {
 		return position;
 	}
 
+	public long length() throws IOException {
+		return length;
+	}
+
 	public int read() throws IOException {
 		subStream.seek(position + offset);
 		int r;
