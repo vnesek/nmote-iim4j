@@ -10,7 +10,7 @@ import com.nmote.iim4j.serialize.Serializer;
 /**
  * DataSetInfo contains meta-information about an instance of IIM DataSet.
  */
-public interface DataSetInfo {
+public interface DataSetInfo extends Comparable<DataSetInfo> {
 
 	/**
 	 * Returns DataSet number.
@@ -36,9 +36,9 @@ public interface DataSetInfo {
 	/**
 	 * Returns true if DataSet is mandatory.
 	 *
-	 * @return true if DataSet is repeatable
+	 * @return true if DataSet is mandatory
 	 */
-	// public boolean isMandatory();
+	boolean isMandatory();
 
 	/**
 	 * Returns serializer for this dataset.

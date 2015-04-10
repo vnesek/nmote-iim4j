@@ -60,7 +60,7 @@ public class IIMDataSetInfoFactory extends DefaultDataSetInfoFactory {
 			}
 			String[] a = line.split(":");
 			DataSetInfo info = new DefaultDataSetInfo(Integer.parseInt(a[0]) << 8 | Integer.parseInt(a[1]),
-					a[2].trim(), serializerFactory.create(a[3]), true);
+					a[2].trim(), serializerFactory.create(a[3]), a[4].indexOf('r') != -1, a[4].indexOf('m') != -1);
 			ds.put(createKey(info.getDataSetNumber()), info);
 		}
 		r.close();

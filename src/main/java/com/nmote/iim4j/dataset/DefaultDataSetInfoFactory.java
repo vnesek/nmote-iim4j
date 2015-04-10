@@ -23,6 +23,6 @@ public class DefaultDataSetInfoFactory implements DataSetInfoFactory {
 		if (dataSetNumber < 0 || dataSetNumber > 255) {
 			throw new InvalidDataSetException("dataset number: " + dataSetNumber);
 		}
-		return new DefaultDataSetInfo(dataSet, "<unknown>", new BinarySerializer(null), true);
+		return new DefaultDataSetInfo(dataSet, "<unknown>", new BinarySerializer(null), true, false);
 	}
 }
