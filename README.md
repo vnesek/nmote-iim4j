@@ -3,7 +3,7 @@ IIM4J - IPTC IIM Library for Java
 
 IIM4J allows Java programmers to read, write and process IPTC IIM version 4 files.
 For example, you can read and write metadata contained in JPEG files.
-More information regarding IIM is available on IPTC website, www.iptc.org.
+More information regarding IIM is available on IPTC website, http://www.iptc.org .
 
 Features
 --------
@@ -65,6 +65,10 @@ To produce nmote-xr.jar you will need apache maven installed. Run:
 History
 -------
 
+* Version 1.1.0. 10.04.2015
+  Support for basic validation of IIMFile metadata. See IIMFile::validate methods.
+  Few small fixes/improvements.
+
 * Version 1.0.0. 31.01.2015
   Keeping same version, only changes are better javadocs and publishing to maven central.
 
@@ -81,6 +85,13 @@ History
 * Version 0.8 11.05.2004
   Initial release of project IIM4J on
   Sourceforge under BSD license
+  
+Who is using IIM4J
+------------------
+
+* ExifStock http://www.stockphoto-tools.com/
+
+* HINA http://www.hina.hr/
 
 Author contact and support
 --------------------------
