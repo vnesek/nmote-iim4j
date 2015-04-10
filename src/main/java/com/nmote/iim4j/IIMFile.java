@@ -92,16 +92,17 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 	 *
 	 * @param ds
 	 *            data set id (see constants in IIM class)
-	 * @param value
-	 *            data set value. Null values are silently ignored.
+	 * @param date
+	 *            date to set. Null values are silently ignored.
 	 * @throws SerializationException
 	 *             if value can't be serialized by data set's serializer
 	 * @throws InvalidDataSetException
 	 *             if data set isn't defined
 	 */
 	public void addDateTimeHelper(int ds, Date date) throws SerializationException, InvalidDataSetException {
-		if (date == null)
+		if (date == null) {
 			return;
+		}
 
 		DataSetInfo dsi = dsiFactory.create(ds);
 
@@ -139,6 +140,7 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 	 * Gets a first data set value.
 	 *
 	 * @param dataSet
+	 *            IIM record and dataset code (See constants in {@link IIM})
 	 * @return data set value
 	 * @throws SerializationException
 	 *             if value can't be deserialized from binary representation
@@ -160,6 +162,7 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 	 * Gets all data set values.
 	 *
 	 * @param dataSet
+	 *            IIM record and dataset code (See constants in {@link IIM})
 	 * @return data set value
 	 * @throws SerializationException
 	 *             if value can't be deserialized from binary representation
@@ -490,8 +493,8 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 	 * Checks if data set is mandatory but missing or non repeatable but having
 	 * multiple values in this IIM instance.
 	 *
-	 * @param ds
-	 *            data set to check
+	 * @param info
+	 *            IIM data set to check
 	 * @return list of constraint violations, empty set if data set is valid
 	 */
 	public Set<ConstraintViolation> validate(DataSetInfo info) {
@@ -510,8 +513,8 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 	}
 
 	/**
-	 * Checks all data sets in a given record for constraint violations. 
-	 * 
+	 * Checks all data sets in a given record for constraint violations.
+	 *
 	 * @param record
 	 *            IIM record (1,2,3, ...) to check
 	 *
@@ -531,7 +534,7 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 	}
 
 	/**
-	 * Checks all data sets in IIM records 1, 2 and 3 for constraint violations. 
+	 * Checks all data sets in IIM records 1, 2 and 3 for constraint violations.
 	 *
 	 * @return list of constraint violations, empty set if IIM file is valid
 	 */
@@ -542,7 +545,7 @@ public class IIMFile extends DefaultSerializationContext implements Serializable
 		}
 		return errors;
 	}
-	
+
 	private SerializationContext activeSerializationContext = this;
 	private List<DataSet> dataSets = new ArrayList<DataSet>();
 	private DataSetInfoFactory dsiFactory;
